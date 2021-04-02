@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "10"
+
+script: echo "T2 Running tests against $NPM_TOKEN ..."
+
+
+deploy:
+  provider: npm
+  email: mail@rafaelteixeira.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
