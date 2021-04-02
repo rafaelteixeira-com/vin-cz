@@ -1,0 +1,21 @@
+language: node_js
+
+node_js:
+  - 10
+
+script:
+  - echo "skip tests..."
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - echo "deploy npm..."
+          - npx semantic-release    
+        on:
+          tags: true
+          all_branches: true

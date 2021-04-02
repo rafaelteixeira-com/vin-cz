@@ -1,0 +1,19 @@
+  
+language: node_js
+node_js:
+- 10
+cache:
+  npm: true
+  directories:
+  - "~/.cache"
+dist: trusty
+sudo: required
+script:
+- echo 'init script NPM:' $NPM_TOKEN_RT
+deploy:
+  provider: npm
+  email: mail+travis@rafaelteixeira.com
+  api_key: $NPM_TOKEN_RT
+  on:
+    tags: true
+    repo: rafaelteixeira-com/vin-cz
