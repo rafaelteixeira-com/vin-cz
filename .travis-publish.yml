@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - 10
+
+stages:
+  - publish
+
+before_script:
+  - whoami
+  - pwd
+
+script:
+- echo "init publishing"
+- npm publish
